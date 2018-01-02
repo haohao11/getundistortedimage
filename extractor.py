@@ -46,10 +46,11 @@ while success:
     # added this line 
     success,image = vidcap.read()
     print ('Read a new frame: ', success)
-    #cv2.imwrite(name, image) # save frame as JPEG file
+    # cv2.imwrite(name, image) # save frame as JPEG file
     currentFrame = currentFrame + 1
+    # the vedio is 30fps and the time-slot is defined as 0.5 seconds
     if currentFrame%15 == 0:
-        #cv2.imwrite(name, image)
+        # cv2.imwrite(name, image)
         slot = slot + 1
         if slot >= 0:
             img_undistorted = cv2.fisheye.undistortImage(image, K, D=D, Knew=Knew)            
